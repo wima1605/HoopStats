@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Over</title>
+    <style>
+        body {
+            background-image: url('../static/imgs/Basketball-Court-Wood-Background-7267-Best-Wallpapers-Basketball-Court.jpg');
+         background-size: cover;
+    position: relative;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    overflow: hidden;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end; 
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+
+        .player-info {
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    font-family: "Arial", sans-serif; 
+    font-size: 40px; 
+}
+
+        .player-info img {
+            width: 500px;
+            height: auto; 
+            filter: grayscale(50%); 
+            opacity: 0.8; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+            margin: 0 10px;
+        }
+        h1{
+            color: white;
+        }
+        h2{
+            color: white;
+        }
+        p{
+            color: white;
+            font-size: 25px;
+        }
+        img {
+            margin-right: 10px; 
+            width: 50px; 
+            height: 50px; 
+        }
+        .button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        flex-direction: column; 
+    }
+    .button-container button {
+        background-color: #4caf4f00; 
+        border: 2px solid whitesmoke;
+        color: whitesmoke;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        position: relative;
+        border-radius: 10px; 
+        width: 150px; 
+        height: 50px; 
+    }
+    .button-container button::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid white; 
+        transform: translateY(-50%);
+    }
+    .button-container button.lower::after {
+        border-bottom: none;
+        border-top: 6px solid white;
+        transform: translateY(-50%);
+    }
+    .button {
+    background-color:rgb(209, 136, 0); 
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    opacity: 0.9;
+    border-radius: 20px;
+    position: relative;
+    z-index: 10; 
+}
+
+
+.button:hover {
+    opacity: 1;
+}
+.home-icon {
+    position: fixed;  /* Fixed positioning to keep it at the same spot */
+    top: 10px;        /* Distance from the top of the viewport */
+    right: 10px;      /* Distance from the right of the viewport */
+    z-index: 1000;    /* Ensures it stays on top of other content */
+}
+
+.home-icon a {
+    color: #333;          /* Icon color, change as needed */
+    text-decoration: none;/* Removes underline from the link */
+    font-size: 24px;      /* Icon size, adjust as needed */
+}
+
+.home-icon a:hover {
+    color: #555;          /* Icon color on hover, change as needed */
+}
+
+    </style>
+        <script src='../static/js/script.js'></script>
+</head>
+<body>
+
+    <div class="home-icon">
+        <a href="/" class="home-icon-link" title="Home">
+            <i class="fas fa-home"></i> <!-- Font Awesome Home Icon -->
+        </a>
+    </div>
+    
+    
+    <div class="game-over-container">
+        <h1>Game Over</h1>
+        <h2>Current Score: {{ current_score }}</h2>
+        <h2>High-Score: {{ high_score }}</span></h2>
+        
+        <div class="image-container">
+            <div class="player-info">
+                {% if player1 %}
+                <strong>{{ player1['full_name'] }}</strong><br>
+                Career Blocks: {{ player1['bc'] }}<br>
+                <img src="{{ player1['image'] }}" alt="{{ player1['full_name'] }} Image">
+                {% endif %}
+            </div>
+            
+            <div class="player-info">
+                {% if player2 %}
+                <strong>{{ player2['full_name'] }}</strong><br>
+                Career Blocks: {{ player2['bc'] }}<br>
+                <img src="{{ player2['image'] }}" alt="{{ player2['full_name'] }} Image">
+                {% endif %}
+            </div>
+        </div>
+        <div class="button-container">
+            <a href="/" class="button">Play Again</a>
+        </div>
+    </div>
+
+    <script src='../static/js/script.js'></script>
+</body>
+</html>
+       
