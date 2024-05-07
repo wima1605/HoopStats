@@ -8,63 +8,79 @@
     <title>HoopStats</title>
     <link rel="icon" href="data:,">
     <style>
-        body {
-            background-image: url('../static/imgs/Basketball-Court-Wood-Background-7267-Best-Wallpapers-Basketball-Court.jpg');
-         background-size: cover;
-    position: relative;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    overflow: hidden;
-        }
-
-        .image-container {
-            display: flex;
-            justify-content: space-around;
-            align-items: flex-end; 
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-        }
-
-        .player-info {
-    color: white;
-    text-align: center;
-    margin-top: 10px; 
-    font-family: "Arial", sans-serif; 
-    font-size: 40px; 
-}
-
-        .player-info img {
-            width: 500px;
-            height: auto; 
-            filter: grayscale(50%); 
-            opacity: 0.8; 
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-            margin: 0 10px; 
-        }
-        h1{
-            color: white;
-        }
-        h2{
-            color: white;
-        }
-        img {
-            margin-right: 10px; 
-            width: 50px; 
-            height: 50px; 
-        }
-        .button-container {
+    /* Base styles for body and background */
+    body {
+        background-image: url('../static/imgs/Basketball-Court-Wood-Background-7267-Best-Wallpapers-Basketball-Court.jpg');
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: relative;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        padding-top: 60px; /* Padding to avoid overlap with fixed elements */
+        text-align: center;
+        overflow: hidden;
+    }
+    
+    /* Image and text styles */
+    img {
+        margin-right: 10px;
+        width: 50px;
+        height: 50px;
+        vertical-align: middle;
+    }
+    
+    h1, h2 {
+        color: white;
+        font-size: 28px; /* Default font size */
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    h1 {
+        margin: 40px 0 10px;
+        padding: 0 10px;
+    }
+    
+    .player-info {
+        color: white;
+        text-align: center;
+        margin-top: 10px;
+        font-family: "Arial", sans-serif;
+        font-size: 40px;
+    }
+    
+    .player-info img {
+        width: 500px;
+        height: auto;
+        filter: grayscale(50%);
+        opacity: 0.8;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        margin: 0 10px;
+    }
+    
+    /* Container styles */
+    .image-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    
+    .button-container {
         display: flex;
         justify-content: center;
         align-items: center;
         margin-top: 20px;
         flex-direction: column;
     }
+    
     .button-container button {
-        background-color: #4caf4f00; 
+        background-color: #4caf4f00;
         border: 2px solid whitesmoke;
         color: whitesmoke;
         padding: 10px 20px;
@@ -75,11 +91,13 @@
         margin: 4px 2px;
         cursor: pointer;
         position: relative;
-        border-radius: 10px; 
-        width: 150px; 
-        height: 50px; 
+        border-radius: 10px;
+        width: 150px;
+        height: 50px;
     }
-    .button-container button::after {
+    
+    .button-container button::after,
+    .button-container .lowerButton::after {
         content: '';
         position: absolute;
         top: 50%;
@@ -88,50 +106,424 @@
         height: 0;
         border-left: 6px solid transparent;
         border-right: 6px solid transparent;
-        border-bottom: 6px solid white; 
+        border-bottom: 6px solid white;
         transform: translateY(-50%);
     }
+    
     .button-container .lowerButton::after {
-    border-bottom: none;
-    border-top: 6px solid white; /* Triangle pointing down */
-    transform: translateY(-50%);
+        border-bottom: none;
+        border-top: 6px solid white;
+    }
+    
+    .right-image {
+        margin-left: 8px;
+    }
+    
+    /* Fixed elements */
+    .home-icon {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+    }
+    
+    .home-icon a, .home-icon a:hover {
+        color: #333;
+        text-decoration: none;
+        font-size: 24px;
+    }
+    
+    .home-icon a:hover {
+        color: #555;
+    }
+    .head-container{
+    display:inline;
+   }
+    
+    /* Media Queries for responsive adjustments */
+    @media (max-width: 400px) and (max-height: 700px) {
+    /* General body styling for small screens */
+
+    body {
+    margin-top: 0; /* Remove top margin */
+    padding-top: 0; /* Remove top padding if any */
 }
-.right-image {
-    margin-left: 8px; /* Adjust this value as needed to move the image to the right */
+h1{
+    
+    margin-top: 30px; /* Remove top margin */
+    padding-bottom: 20px; /* Remove top padding if any */
+    font-size:20px;
 }
-.home-icon {
-    position: fixed;  /* Fixed positioning to keep it at the same spot */
-    top: 10px;        /* Distance from the top of the viewport */
-    right: 10px;      /* Distance from the right of the viewport */
-    z-index: 1000;    /* Ensures it stays on top of other content */
+body, .home-icon, .image-container {
+    margin: 0;
+    padding: 0;
 }
 
-.home-icon a {
-    color: #333;          /* Icon color, change as needed */
-    text-decoration: none;/* Removes underline from the link */
-    font-size: 24px;      /* Icon size, adjust as needed */
+    /* Consistent font size across all text elements */
+    .player-info, h2, .button-container button, .home-icon a {
+        font-size: 18px; /* Choose the smallest applicable font size for readability */
+    }
+
+    /* Image adjustments to ensure they do not take too much space */
+    .player-info img {
+        width: calc(100% - 140px);
+    height: calc(100% - 140px);
+    }
+    .right-image {
+        width: 20px; /* Standardized width for images in the player-info and h1 */
+        height: 20px; /* Standardized height for images */
+    }
+    .left-image {
+        width: 20px; /* Standardized width for images in the player-info and h1 */
+        height: 20px; /* Standardized height for images */
+    }
+    /* Adjust the layout of image container to stack its contents vertically */
+    .image-container {
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+        margin: 0; /* Remove any default margin */
+        padding: 0; /* Remove any default padding */
+      /* Reduces space between h1 and this container */
+    }
+
+    /* Player info box adjustments */
+    .player-info {
+        width: 100%; /* Full width for alignment */
+        margin-bottom: 10px; /* Reduce bottom margin to bring player info sections closer */
+        height: 300;
+    }
+    /* Full width buttons with adjusted padding for better touch targets */
+    .button-container button {
+        width: 100%;
+        padding: 8px 10px; /* Slightly reduce padding to fit smaller screens */
+    }
+
+    /* Additional adjustments for specific elements */
+}
+@media (min-width: 340px) and (min-height: 701px) and (max-width: 500px) and (max-height: 1000px) {
+    /* General body styling for small screens */
+
+    body {
+    margin-top: -20px; /* Remove top margin */
+    padding-top: -40px; /* Remove top padding if any */
+}
+h1{
+    align-items: center;
+    position: relative;
+    margin-top: 20px; /* Remove top margin */
+    padding-bottom: 10px; /* Remove top padding if any */
+    font-size:auto;
+}
+.right-image, .left-image{
+       
+       width: 40px; /* Standardized width for images in the player-info and h1 */
+       height: 40px; /* Standardized height for images */
+   }
+   .head-container{
+    display:block;
+   }
+body, .home-icon, .image-container {
+    margin: 0;
+    padding: 0;
 }
 
-.home-icon a:hover {
-    color: #555;          /* Icon color on hover, change as needed */
+    /* Consistent font size across all text elements */
+    .player-info, h2, .button-container button, .home-icon a {
+        font-size: 25px; /* Choose the smallest applicable font size for readability */
+    }
+
+    /* Image adjustments to ensure they do not take too much space */
+    .player-info img {
+        width: calc(100% - 140px);
+    height: calc(100% - 140px);
+    }
+
+
+    /* Adjust the layout of image container to stack its contents vertically */
+    .image-container {
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+        margin: 0; /* Remove any default margin */
+        padding: 0; /* Remove any default padding */
+        margin-top: -100px; /* Reduces space between h1 and this container */
+    }
+
+    /* Player info box adjustments */
+    .player-info {
+        width: 100%; /* Full width for alignment */
+        margin-bottom: 10px; /* Reduce bottom margin to bring player info sections closer */
+        height: auto;
+    }
+    /* Full width buttons with adjusted padding for better touch targets */
+    .button-container button {
+        width: 100%;
+        padding: 8px 10px; /* Slightly reduce padding to fit smaller screens */
+    }
+    
+
+    /* Additional adjustments for specific elements */
+}
+@media (min-width: 801px) and (min-height: 1200px) and (max-width: 1100px) and (max-height: 1400px) {
+    /* General body styling for small screens */
+
+    body {
+    margin-top: -20px; /* Remove top margin */
+    padding-top: -40px; /* Remove top padding if any */
+}
+h1{
+    align-items: center;
+    position: relative;
+    margin-top: 20px; /* Remove top margin */
+   padding-bottom:20px;/* Remove top padding if any */
+    font-size:50px;
+}
+.right-image, .left-image{
+       
+       width: 40px; /* Standardized width for images in the player-info and h1 */
+       height: 40px; /* Standardized height for images */
+   }
+   .head-container{
+    display:block;
+   }
+body, .home-icon, .image-container {
+    margin: 0;
+    padding: 0;
 }
 
-    </style>
+    /* Consistent font size across all text elements */
+    .player-info, h2, .button-container button, .home-icon a {
+        font-size: 35px; /* Choose the smallest applicable font size for readability */
+    }
+
+    /* Image adjustments to ensure they do not take too much space */
+    .player-info img {
+        width: calc(100% -400px);
+    height: calc(100% - 300px);
+    }
+
+
+    /* Adjust the layout of image container to stack its contents vertically */
+    .image-container {
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+        margin: 0; /* Remove any default margin */
+        padding: 0; /* Remove any default padding */
+        margin-top: -100px; /* Reduces space between h1 and this container */
+    }
+
+    /* Player info box adjustments */
+    .player-info {
+        width: 100%; /* Full width for alignment */
+        margin-bottom: 10px; /* Reduce bottom margin to bring player info sections closer */
+        height: auto;
+    }
+    /* Full width buttons with adjusted padding for better touch targets */
+    .button-container button {
+        width: 100%;
+        height:80px;
+        padding: 8px 10px; /* Slightly reduce padding to fit smaller screens */
+    }
+
+    /* Additional adjustments for specific elements */
+}
+@media (min-width: 501px) and (min-height: 701px) and (max-width: 900px) and (max-height: 1200px) {
+    /* General body styling for small screens */
+
+    body {
+    margin-top: -20px; /* Remove top margin */
+    padding-top: -40px; /* Remove top padding if any */
+}
+h1{
+    align-items: center;
+    position: relative;
+    margin-top: 20px; /* Remove top margin */
+   padding-bottom:20px;/* Remove top padding if any */
+    font-size:35px;
+}
+.right-image, .left-image{
+       
+       width: 40px; /* Standardized width for images in the player-info and h1 */
+       height: 40px; /* Standardized height for images */
+   }
+   .head-container{
+    display:block;
+   }
+body, .home-icon, .image-container {
+    margin: 0;
+    padding: 0;
+}
+
+    /* Consistent font size across all text elements */
+    .player-info, h2, .button-container button, .home-icon a {
+        font-size: 35px; /* Choose the smallest applicable font size for readability */
+    }
+
+    /* Image adjustments to ensure they do not take too much space */
+    .player-info img {
+        width: auto;
+    height: 250px;
+    }
+
+
+    /* Adjust the layout of image container to stack its contents vertically */
+    .image-container {
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+        margin: 0; /* Remove any default margin */
+        padding: 0; /* Remove any default padding */
+        margin-top: -100px; /* Reduces space between h1 and this container */
+    }
+
+    /* Player info box adjustments */
+    .player-info {
+        width: 100%; /* Full width for alignment */
+        margin-bottom: 10px; /* Reduce bottom margin to bring player info sections closer */
+        height: auto;
+    }
+    /* Full width buttons with adjusted padding for better touch targets */
+    .button-container button {
+        width: 100%;
+        height:80px;
+        padding: 8px 10px; /* Slightly reduce padding to fit smaller screens */
+    }
+
+    /* Additional adjustments for specific elements */
+}
+@media (min-width: 501px) and (min-height: 500px) and (max-width: 600px) and (max-height: 800px) {
+    /* General body styling for small screens */
+
+    body {
+    margin-top: -20px; /* Remove top margin */
+    padding-top: -40px; /* Remove top padding if any */
+}
+h1{
+    align-items: center;
+    position: relative;
+    margin-top: 20px; /* Remove top margin */
+   padding-bottom:20px;/* Remove top padding if any */
+    font-size:25px;
+}
+.right-image, .left-image{
+       
+       width: 40px; /* Standardized width for images in the player-info and h1 */
+       height: 40px; /* Standardized height for images */
+   }
+   .head-container{
+    display:block;
+   }
+body, .home-icon, .image-container {
+    margin: 0;
+    padding: 0;
+}
+
+    /* Consistent font size across all text elements */
+    .player-info, h2, .button-container button, .home-icon a {
+        font-size: 30px; /* Choose the smallest applicable font size for readability */
+    }
+
+    /* Image adjustments to ensure they do not take too much space */
+    .player-info img {
+        width: auto;
+    height: 100px;
+    }
+
+
+    /* Adjust the layout of image container to stack its contents vertically */
+    .image-container {
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+        margin: 0; /* Remove any default margin */
+        padding: 0; /* Remove any default padding */
+        margin-top: -100px; /* Reduces space between h1 and this container */
+    }
+
+    /* Player info box adjustments */
+    .player-info {
+        width: 100%; /* Full width for alignment */
+        margin-bottom: 10px; /* Reduce bottom margin to bring player info sections closer */
+        height: auto;
+    }
+    /* Full width buttons with adjusted padding for better touch targets */
+    .button-container button {
+        width: 100%;
+        height:80px;
+        padding: 8px 10px; /* Slightly reduce padding to fit smaller screens */
+    }
+
+    /* Additional adjustments for specific elements */
+}
+/* Hide the content by default */
+
+.rotate-device {
+
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 50vh; /* Vertically center the text */
+    z-index: 1000; /* Make sure it's on top of other content */
+  
+}
+.message-thing{
+    box-sizing: content-box;
+    border: 5px solid white; /* Adds a white border */
+}
+
+/* Show the message only in landscape mode */
+@media (orientation: landscape) {
+    .rotate-device {
+        display: block;
+     
+}
+h1, .image-container {
+    display: none;
+    }
+}
+
+
+/* Show the content only in portrait orientation */
+@media (orientation: portrait) {
+    .head-container, .image-container {
+        display: block;
+    }
+}
+
+</style>    
         <script src='../static/js/script.js'></script>
 </head>
 <body>
+    <div class="rotate-device">
+        <div class="message-thing">
+        Please rotate your device to portrait mode for the best experience.
+        </div>
+        </div>
     <div class="home-icon">
         <a href="/" class="home-icon-link" title="Home">
             <i class="fas fa-home"></i> <!-- Font Awesome Home Icon -->
         </a>
     </div>
     
-    
-    <h1>High-Score: <span id="highest-score">0</span> <img src="../static/imgs/hooplogo.jpg" alt="Left Image">HoopStats<img src="../static/imgs/hooplogo.jpg" alt="Right Image"class="right-image">Current Score: <span id="current-score">0</span></h1>
+   
+    <h1>High-Score: <span id="highest-score">0</span> <div class="head-container"><img src="../static/imgs/hooplogo.jpg" alt="Left Image"class="left-image">HoopStats<img src="../static/imgs/hooplogo.jpg" alt="Right Image"class="right-image"></div>Current Score: <span id="current-score">0</span></h1>
 
 
-       
-    </div>
+  
     <div class="image-container">
         <div class="player-info" id="player1-info">
             <!-- Player 1 info will be loaded here -->
@@ -141,6 +533,6 @@
             <!-- Player 2 info and buttons will be loaded here -->
         </div>
     </div>
-   
+
 </body>
 </html>
