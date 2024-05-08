@@ -143,19 +143,18 @@
     /* Media Queries for responsive adjustments */
     @media (max-width: 400px) and (max-height: 700px) {
     /* General body styling for small screens */
-.head-container{
-    display: block;
-}
+
     body {
     margin-top: 0; /* Remove top margin */
     padding-top: 0; /* Remove top padding if any */
 }
 h1{
     
-    margin-top: 30px; /* Remove top margin */
+    margin-top: 0px; /* Remove top margin */
     padding-bottom: 20px; /* Remove top padding if any */
-    font-size:20px;
-    padding: auto;
+    margin-bottom: 10px;
+    font-size:12px;
+    padding: 0px;
 }
 body, .home-icon, .image-container {
     margin: 0;
@@ -164,7 +163,7 @@ body, .home-icon, .image-container {
 
     /* Consistent font size across all text elements */
     .player-info, h2, .button-container button, .home-icon a {
-        font-size: 18px; /* Choose the smallest applicable font size for readability */
+        font-size: 15px; /* Choose the smallest applicable font size for readability */
     }
 
     /* Image adjustments to ensure they do not take too much space */
@@ -182,6 +181,7 @@ body, .home-icon, .image-container {
     }
     /* Adjust the layout of image container to stack its contents vertically */
     .image-container {
+        margin-top:10px;
         display: flex;
     flex-direction: column;
     align-items: center;
@@ -194,7 +194,72 @@ body, .home-icon, .image-container {
     /* Player info box adjustments */
     .player-info {
         width: 100%; /* Full width for alignment */
-        margin-bottom: 10px; /* Reduce bottom margin to bring player info sections closer */
+        margin-bottom: 25px; /* Reduce bottom margin to bring player info sections closer */
+        height: 300;
+    }
+    /* Full width buttons with adjusted padding for better touch targets */
+    .button-container button {
+        width: 100%;
+        padding: 0px 8px; /* Slightly reduce padding to fit smaller screens */
+        height:40px
+    }
+
+    /* Additional adjustments for specific elements */
+}
+@media (max-width: 400px) and (min-height:701px)and (max-height: 799px) {
+    /* General body styling for small screens */
+
+    body {
+    margin-top: 0; /* Remove top margin */
+    padding-top: 0; /* Remove top padding if any */
+}
+h1{
+    
+    margin-top: 0px; /* Remove top margin */
+    padding-bottom: 20px; /* Remove top padding if any */
+    margin-bottom: 10px;
+    font-size:12px;
+    padding: 0px;
+}
+body, .home-icon, .image-container {
+    margin: 0;
+    padding: 0;
+}
+
+    /* Consistent font size across all text elements */
+    .player-info, h2, .button-container button, .home-icon a {
+        font-size: 15px; /* Choose the smallest applicable font size for readability */
+    }
+
+    /* Image adjustments to ensure they do not take too much space */
+    .player-info img {
+        width: calc(100% - 140px);
+    height: calc(100% - 140px);
+    }
+    .right-image {
+        width: 20px; /* Standardized width for images in the player-info and h1 */
+        height: 20px; /* Standardized height for images */
+    }
+    .left-image {
+        width: 20px; /* Standardized width for images in the player-info and h1 */
+        height: 20px; /* Standardized height for images */
+    }
+    /* Adjust the layout of image container to stack its contents vertically */
+    .image-container {
+        margin-top:10px;
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+        margin: 0; /* Remove any default margin */
+        padding: 0; /* Remove any default padding */
+      /* Reduces space between h1 and this container */
+    }
+
+    /* Player info box adjustments */
+    .player-info {
+        width: 100%; /* Full width for alignment */
+        margin-bottom: 50px; /* Reduce bottom margin to bring player info sections closer */
         height: 300;
     }
     /* Full width buttons with adjusted padding for better touch targets */
@@ -205,7 +270,71 @@ body, .home-icon, .image-container {
 
     /* Additional adjustments for specific elements */
 }
-@media (min-width: 340px) and (min-height: 701px) and (max-width: 500px) and (max-height: 1000px) {
+@media (max-width: 400px) and (min-height:800px)and (max-height: 900px) {
+    /* General body styling for small screens */
+
+    body {
+    margin-top: 0; /* Remove top margin */
+    padding-top: 0; /* Remove top padding if any */
+}
+h1{
+    
+    margin-top: 0px; /* Remove top margin */
+    padding-bottom: 20px; /* Remove top padding if any */
+    margin-bottom: 10px;
+    font-size:14px;
+    padding: 0px;
+}
+body, .home-icon, .image-container {
+    margin: 0;
+    padding: 0;
+}
+
+    /* Consistent font size across all text elements */
+    .player-info, h2, .button-container button, .home-icon a {
+        font-size: 19px; /* Choose the smallest applicable font size for readability */
+    }
+
+    /* Image adjustments to ensure they do not take too much space */
+    .player-info img {
+        width: calc(100% - 140px);
+    height: calc(100% - 140px);
+    }
+    .right-image {
+        width: 15px; /* Standardized width for images in the player-info and h1 */
+        height: 15px; /* Standardized height for images */
+    }
+    .left-image {
+        width: 15px; /* Standardized width for images in the player-info and h1 */
+        height: 15px; /* Standardized height for images */
+    }
+    /* Adjust the layout of image container to stack its contents vertically */
+    .image-container {
+        margin-top:10px;
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+        margin: 0; /* Remove any default margin */
+        padding: 0; /* Remove any default padding */
+      /* Reduces space between h1 and this container */
+    }
+
+    /* Player info box adjustments */
+    .player-info {
+        width: 100%; /* Full width for alignment */
+        margin-bottom: 90px; /* Reduce bottom margin to bring player info sections closer */
+        height: 350;
+    }
+    /* Full width buttons with adjusted padding for better touch targets */
+    .button-container button {
+        width: 100%;
+        padding: 8px 10px; /* Slightly reduce padding to fit smaller screens */
+    }
+
+    /* Additional adjustments for specific elements */
+}
+@media (min-width: 400px) and (min-height: 800px) and (max-width: 500px) and (max-height: 1000px) {
     /* General body styling for small screens */
  
     body {
@@ -217,16 +346,14 @@ h1{
     position: relative;
     margin-top: 20px; /* Remove top margin */
     padding-bottom: 10px; /* Remove top padding if any */
-    font-size:auto;
+    font-size:15px;
 }
 .right-image, .left-image{
        
-       width: 40px; /* Standardized width for images in the player-info and h1 */
-       height: 40px; /* Standardized height for images */
+       width: 25px; /* Standardized width for images in the player-info and h1 */
+       height: 25px; /* Standardized height for images */
    }
-   .head-container{
-    display:block;
-   }
+
 body, .home-icon, .image-container {
     margin: 0;
     padding: 0;
@@ -258,7 +385,7 @@ body, .home-icon, .image-container {
     /* Player info box adjustments */
     .player-info {
         width: 100%; /* Full width for alignment */
-        margin-bottom: 10px; /* Reduce bottom margin to bring player info sections closer */
+        margin-bottom: 60px; /* Reduce bottom margin to bring player info sections closer */
         height: auto;
     }
     /* Full width buttons with adjusted padding for better touch targets */
@@ -270,28 +397,26 @@ body, .home-icon, .image-container {
 
     /* Additional adjustments for specific elements */
 }
-@media (min-width: 801px) and (min-height: 1200px) and (max-width: 1100px) and (max-height: 1400px) {
+@media (min-width: 861px) and (min-height: 1200px) and (max-width: 1100px) and (max-height: 1400px) {
     /* General body styling for small screens */
 
     body {
-    margin-top: -20px; /* Remove top margin */
-    padding-top: -40px; /* Remove top padding if any */
+    margin-top: 0px; /* Remove top margin */
+    padding-top: 0px; /* Remove top padding if any */
 }
 h1{
     align-items: center;
     position: relative;
-    margin-top: 20px; /* Remove top margin */
-   padding-bottom:20px;/* Remove top padding if any */
-    font-size:50px;
+    margin-top: 0px; /* Remove top margin */
+   padding-bottom:0px;/* Remove top padding if any */
+    font-size:40px;
 }
 .right-image, .left-image{
        
        width: 40px; /* Standardized width for images in the player-info and h1 */
        height: 40px; /* Standardized height for images */
    }
-   .head-container{
-    display:block;
-   }
+
 body, .home-icon, .image-container {
     margin: 0;
     padding: 0;
@@ -299,7 +424,7 @@ body, .home-icon, .image-container {
 
     /* Consistent font size across all text elements */
     .player-info, h2, .button-container button, .home-icon a {
-        font-size: 35px; /* Choose the smallest applicable font size for readability */
+        font-size: 30px; /* Choose the smallest applicable font size for readability */
     }
 
     /* Image adjustments to ensure they do not take too much space */
@@ -317,13 +442,13 @@ body, .home-icon, .image-container {
     justify-content: flex-start;
         margin: 0; /* Remove any default margin */
         padding: 0; /* Remove any default padding */
-        margin-top: -100px; /* Reduces space between h1 and this container */
+       /* Reduces space between h1 and this container */
     }
 
     /* Player info box adjustments */
     .player-info {
         width: 100%; /* Full width for alignment */
-        margin-bottom: 10px; /* Reduce bottom margin to bring player info sections closer */
+        margin-bottom: 90px; /* Reduce bottom margin to bring player info sections closer */
         height: auto;
     }
     /* Full width buttons with adjusted padding for better touch targets */
@@ -335,28 +460,26 @@ body, .home-icon, .image-container {
 
     /* Additional adjustments for specific elements */
 }
-@media (min-width: 501px) and (min-height: 701px) and (max-width: 900px) and (max-height: 1200px) {
+@media (min-width: 501px) and (min-height: 701px) and (max-width: 860px) and (max-height: 1290px) {
     /* General body styling for small screens */
 
     body {
-    margin-top: -20px; /* Remove top margin */
-    padding-top: -40px; /* Remove top padding if any */
+    margin-top: 0px; /* Remove top margin */
+    padding-top: 0px; /* Remove top padding if any */
 }
 h1{
     align-items: center;
     position: relative;
     margin-top: 20px; /* Remove top margin */
    padding-bottom:20px;/* Remove top padding if any */
-    font-size:35px;
+    font-size:25px;
 }
 .right-image, .left-image{
        
-       width: 40px; /* Standardized width for images in the player-info and h1 */
-       height: 40px; /* Standardized height for images */
+       width: 30px; /* Standardized width for images in the player-info and h1 */
+       height: 30px; /* Standardized height for images */
    }
-   .head-container{
-    display:block;
-   }
+
 body, .home-icon, .image-container {
     margin: 0;
     padding: 0;
@@ -364,13 +487,14 @@ body, .home-icon, .image-container {
 
     /* Consistent font size across all text elements */
     .player-info, h2, .button-container button, .home-icon a {
-        font-size: 35px; /* Choose the smallest applicable font size for readability */
+        font-size: 30px; /* Choose the smallest applicable font size for readability */
     }
 
     /* Image adjustments to ensure they do not take too much space */
     .player-info img {
         width: auto;
-    height: 250px;
+        
+    height: 220px;
     }
 
 
@@ -388,7 +512,7 @@ body, .home-icon, .image-container {
     /* Player info box adjustments */
     .player-info {
         width: 100%; /* Full width for alignment */
-        margin-bottom: 10px; /* Reduce bottom margin to bring player info sections closer */
+        margin-bottom: 70px; /* Reduce bottom margin to bring player info sections closer */
         height: auto;
     }
     /* Full width buttons with adjusted padding for better touch targets */
@@ -412,16 +536,14 @@ h1{
     position: relative;
     margin-top: 20px; /* Remove top margin */
    padding-bottom:20px;/* Remove top padding if any */
-    font-size:25px;
+    font-size:20px;
 }
 .right-image, .left-image{
        
-       width: 40px; /* Standardized width for images in the player-info and h1 */
-       height: 40px; /* Standardized height for images */
+       width: 30px; /* Standardized width for images in the player-info and h1 */
+       height: 30px; /* Standardized height for images */
    }
-   .head-container{
-    display:block;
-   }
+
 body, .home-icon, .image-container {
     margin: 0;
     padding: 0;
@@ -429,13 +551,13 @@ body, .home-icon, .image-container {
 
     /* Consistent font size across all text elements */
     .player-info, h2, .button-container button, .home-icon a {
-        font-size: 30px; /* Choose the smallest applicable font size for readability */
+        font-size: 20px; /* Choose the smallest applicable font size for readability */
     }
 
     /* Image adjustments to ensure they do not take too much space */
     .player-info img {
         width: auto;
-    height: 100px;
+    height: 150px;
     }
 
 
@@ -447,19 +569,19 @@ body, .home-icon, .image-container {
     justify-content: flex-start;
         margin: 0; /* Remove any default margin */
         padding: 0; /* Remove any default padding */
-        margin-top: -100px; /* Reduces space between h1 and this container */
+        margin-top: 0px; /* Reduces space between h1 and this container */
     }
 
     /* Player info box adjustments */
     .player-info {
         width: 100%; /* Full width for alignment */
-        margin-bottom: 10px; /* Reduce bottom margin to bring player info sections closer */
+        margin-bottom: 50px; /* Reduce bottom margin to bring player info sections closer */
         height: auto;
     }
     /* Full width buttons with adjusted padding for better touch targets */
     .button-container button {
         width: 100%;
-        height:80px;
+        height:50px;
         padding: 8px 10px; /* Slightly reduce padding to fit smaller screens */
     }
 
